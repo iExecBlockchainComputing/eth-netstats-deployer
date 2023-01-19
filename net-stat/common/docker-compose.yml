@@ -1,0 +1,18 @@
+version: "3.4"
+
+services:
+  netstats-with-secret:
+    image: ${IMAGE}:${VERSION}
+    ports:
+      - "3000:3000"
+    restart: always
+    secrets:
+      - source: ws  
+        target: /eth-netstats/ws_secret.json
+
+
+secrets:
+  ws:
+    external: true
+
+# sudo docker secret create ws ws_secret.json
