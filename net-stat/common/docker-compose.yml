@@ -1,18 +1,10 @@
 version: "3.4"
 
 services:
-  netstats-with-secret:
-    image: ${IMAGE}:${VERSION}
+  governace_ceremony:
+    image: ${CEREMONY_IMAGE}:${CEREMONY_VERSION}
     ports:
       - "3000:3000"
+    volumes:
+      - ../../secret/ws_secret.json:/eth-netstats
     restart: always
-    secrets:
-      - source: ws  
-        target: /eth-netstats/ws_secret.json
-
-
-secrets:
-  ws:
-    external: true
-
-# sudo docker secret create ws ws_secret.json
