@@ -1,8 +1,8 @@
 version: "3.4"
 
 services:
-  governace_ceremony:
-    image: ${CEREMONY_IMAGE}:${CEREMONY_VERSION}
+  eth-netstats:
+    image: ${IMAGE}:${VERSION}
     ports:
       - "3000:3000"
     volumes:
